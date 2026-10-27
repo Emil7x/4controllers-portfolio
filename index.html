@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Team Portfolio // 4CONTROLLERS</title>
+  <meta name="description" content="Explore the official multidisciplinary portfolio of 4controllers — Karthik M S, Emil, Snigdhaa P, and Jeswin. Engineering ECE, Data Science, Game Dev, and Embedded Systems." />
+
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Interactive Canvas Background -->
+  <canvas id="bgCanvas" class="bg-canvas"></canvas>
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+
+  <!-- Main Navigation Bar -->
+  <header class="main-navbar">
+    <a href="#" class="brand-logo" onclick="closePortfolio(); return false;">
+      <div class="logo-symbol">
+        <span class="symbol-core"></span>
+        <span class="symbol-ring"></span>
+      </div>
+      <div class="brand-text">
+        <span class="brand-title">4<span>CONTROLLERS</span></span>
+        <span class="brand-badge">SQUAD PORTFOLIO</span>
+      </div>
+    </a>
+
+    <!-- Squad Live Status -->
+    <div class="nav-telemetry">
+      <div class="live-status-pill">
+        <span class="pulse-dot"></span>
+        <span class="status-label">4 ACTIVE MEMBERS</span>
+      </div>
+      <div class="nav-links hide-mobile">
+        <a href="#team-grid" class="nav-link" onclick="if(currentMember) closePortfolio();">Team Hub</a>
+        <a href="#collaborative-section" class="nav-link" onclick="if(currentMember) closePortfolio();">Synergy</a>
+        <a href="#contact-section" class="nav-link" onclick="if(currentMember) closePortfolio();">Contact</a>
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="nav-actions">
+      <button id="soundToggleBtn" class="action-btn icon-btn" title="Toggle Sound Feedback (Muted by default)" aria-label="Toggle Sound Effects">
+        <span id="soundIcon">🔇</span>
+      </button>
+      <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="action-btn github-squad-btn" title="GitHub Collective">
+        <svg class="gh-icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+        </svg>
+        <span class="hide-mobile">Collective</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Cinematic Transition Veil / Wipe -->
+  <div id="transitionVeil" class="transition-veil">
+    <div class="veil-shimmer"></div>
+  </div>
+
+  <!-- MAIN WRAPPER -->
+  <main class="page-container">
+
+    <!-- ====================================================================
+         VIEW 1: LANDING / TEAM HUB VIEW (4-CARD GRID)
+         ==================================================================== -->
+    <section id="teamHubView" class="view-section hub-view active">
+
+      <!-- Hero Header -->
+      <div class="hub-hero">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span>// MULTIDISCIPLINARY ENGINEERING SQUAD</span>
+        </div>
+        <h1 class="hero-title">
+          Our Team <span class="gradient-text">Portfolio</span>
+        </h1>
+        <p class="hero-subtitle">
+          Four distinct minds united by relentless curiosity. From embedded circuits and sensor hardware to intelligent data analytics, game engines, and vibecoding architectures — explore our individual work and shared projects.
+        </p>
+
+        <!-- Squad Capability Metrics -->
+        <div class="hero-stats-row">
+          <div class="stat-pill">
+            <span class="stat-num">4</span>
+            <span class="stat-label">Controllers</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-pill">
+            <span class="stat-num">ECE &amp; CSE</span>
+            <span class="stat-label">Core Synergy</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-pill">
+            <span class="stat-num">10+</span>
+            <span class="stat-label">Hackathons &amp; Builds</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-pill">
+            <span class="stat-num">100%</span>
+            <span class="stat-label">Hands-On Drive</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 Interactive Cards Grid -->
+      <div id="team-grid" class="team-grid-container">
+        <div class="team-grid-header">
+          <div class="grid-label">
+            <span class="bracket">[</span> TEAM ROSTER <span class="bracket">]</span>
+          </div>
+          <div class="grid-hint">
+            <span>Click any card to launch full portfolio view</span>
+            <span class="key-hint">or press 1-4</span>
+          </div>
+        </div>
+
+        <div class="cards-grid">
+
+          <!-- CARD 1: KARTHIK M S -->
+          <article class="member-card card-karthik" data-member="karthik" onclick="openPortfolio('karthik')">
+            <div class="card-glow"></div>
+            <div class="card-inner">
+              <div class="card-top">
+                <span class="member-num">01 // ECE</span>
+                <span class="availability-badge"><span class="badge-pulse"></span> Active</span>
+              </div>
+
+              <!-- Avatar & Visual -->
+              <div class="card-avatar-wrapper">
+                <div class="avatar-ring"></div>
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80" alt="Karthik M S" class="card-avatar" />
+              </div>
+
+              <!-- Content -->
+              <div class="card-body">
+                <h2 class="member-name">Karthik M S</h2>
+                <div class="member-role">ECE Student</div>
+
+                <div class="card-divider"></div>
+
+                <div class="skills-preview">
+                  <span class="skill-tag">Vibecoding</span>
+                  <span class="skill-tag">Antigravity</span>
+                  <span class="skill-tag">Hardware</span>
+                </div>
+
+                <div class="project-preview-chip">
+                  <span class="chip-icon">⚡</span>
+                  <span class="chip-text">Medbellcare &bull; Odyssey Hackathon</span>
+                </div>
+              </div>
+
+              <!-- Card Action Button -->
+              <div class="card-footer">
+                <span class="cta-text">View Portfolio</span>
+                <span class="cta-arrow">→</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- CARD 2: EMIL -->
+          <article class="member-card card-emil" data-member="emil" onclick="openPortfolio('emil')">
+            <div class="card-glow"></div>
+            <div class="card-inner">
+              <div class="card-top">
+                <span class="member-num">02 // ECE</span>
+                <span class="availability-badge"><span class="badge-pulse"></span> Active</span>
+              </div>
+
+              <!-- Avatar & Visual -->
+              <div class="card-avatar-wrapper">
+                <div class="avatar-ring"></div>
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Emil" class="card-avatar" />
+              </div>
+
+              <!-- Content -->
+              <div class="card-body">
+                <h2 class="member-name">Emil</h2>
+                <div class="member-role">First Year ECE Student | Game Dev &amp; Graphics Enthusiast</div>
+
+                <div class="card-divider"></div>
+
+                <div class="skills-preview">
+                  <span class="skill-tag">Python</span>
+                  <span class="skill-tag">SQL</span>
+                  <span class="skill-tag">Rapid Coding</span>
+                  <span class="skill-tag">Game Dev</span>
+                </div>
+
+                <div class="project-preview-chip">
+                  <span class="chip-icon">🎮</span>
+                  <span class="chip-text">Arduino RC Car &bull; Hackathons</span>
+                </div>
+              </div>
+
+              <!-- Card Action Button -->
+              <div class="card-footer">
+                <span class="cta-text">View Portfolio</span>
+                <span class="cta-arrow">→</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- CARD 3: SNIGDHAA P -->
+          <article class="member-card card-snigdhaa" data-member="snigdhaa" onclick="openPortfolio('snigdhaa')">
+            <div class="card-glow"></div>
+            <div class="card-inner">
+              <div class="card-top">
+                <span class="member-num">03 // CSE</span>
+                <span class="availability-badge"><span class="badge-pulse"></span> Active</span>
+              </div>
+
+              <!-- Avatar & Visual -->
+              <div class="card-avatar-wrapper">
+                <div class="avatar-ring"></div>
+                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80" alt="Snigdhaa P" class="card-avatar" />
+              </div>
+
+              <!-- Content -->
+              <div class="card-body">
+                <h2 class="member-name">Snigdhaa P</h2>
+                <div class="member-role">CSE Student | Data Science Enthusiast</div>
+
+                <div class="card-divider"></div>
+
+                <div class="skills-preview">
+                  <span class="skill-tag">Data Science</span>
+                  <span class="skill-tag">Python/Analytics</span>
+                  <span class="skill-tag">Machine Learning</span>
+                </div>
+
+                <div class="project-preview-chip">
+                  <span class="chip-icon">📊</span>
+                  <span class="chip-text">BookMark App &bull; Analytics</span>
+                </div>
+              </div>
+
+              <!-- Card Action Button -->
+              <div class="card-footer">
+                <span class="cta-text">View Portfolio</span>
+                <span class="cta-arrow">→</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- CARD 4: JESWIN -->
+          <article class="member-card card-jeswin" data-member="jeswin" onclick="openPortfolio('jeswin')">
+            <div class="card-glow"></div>
+            <div class="card-inner">
+              <div class="card-top">
+                <span class="member-num">04 // ECE</span>
+                <span class="availability-badge"><span class="badge-pulse"></span> Active</span>
+              </div>
+
+              <!-- Avatar & Visual -->
+              <div class="card-avatar-wrapper">
+                <div class="avatar-ring"></div>
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" alt="Jeswin" class="card-avatar" />
+              </div>
+
+              <!-- Content -->
+              <div class="card-body">
+                <h2 class="member-name">Jeswin</h2>
+                <div class="member-role">Electronics Engineer | Hardware Meets Software</div>
+
+                <div class="card-divider"></div>
+
+                <div class="skills-preview">
+                  <span class="skill-tag">C / C++</span>
+                  <span class="skill-tag">JavaScript</span>
+                  <span class="skill-tag">Arduino</span>
+                  <span class="skill-tag">IoT</span>
+                </div>
+
+                <div class="project-preview-chip">
+                  <span class="chip-icon">🛠</span>
+                  <span class="chip-text">Home Monitoring &bull; Hackathons</span>
+                </div>
+              </div>
+
+              <!-- Card Action Button -->
+              <div class="card-footer">
+                <span class="cta-text">View Portfolio</span>
+                <span class="cta-arrow">→</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- Collective Squad Synergy Section -->
+      <section id="collaborative-section" class="squad-synergy-section">
+        <div class="synergy-header">
+          <span class="section-tag">// SQUAD INTEGRATION // CROSS-DISCIPLINARY</span>
+          <h2>How 4controllers Build Together</h2>
+          <p>
+            When our four controllers sync up, we cover the full engineering lifecycle: hardware sensing, firmware architecture, predictive data analytics, interactive frontend/game visuals, and rapid hackathon execution.
+          </p>
+        </div>
+
+        <div class="synergy-grid">
+          <div class="synergy-card">
+            <div class="synergy-icon">⚡</div>
+            <h3>Hardware &amp; IoT</h3>
+            <p>From sensors, microcontrollers (ESP32, Arduino), and circuit logic to physical telemetry nodes.</p>
+            <div class="synergy-leads">Leads: <strong>Karthik M S</strong> &amp; <strong>Jeswin</strong></div>
+          </div>
+
+          <div class="synergy-card">
+            <div class="synergy-icon">🧠</div>
+            <h3>Data &amp; Intelligence</h3>
+            <p>Data science, analytics pipelines, statistical modeling, and structured storage for smart decisions.</p>
+            <div class="synergy-leads">Lead: <strong>Snigdhaa P</strong></div>
+          </div>
+
+          <div class="synergy-card">
+            <div class="synergy-icon">🕹</div>
+            <h3>Game Dev &amp; Rapid Code</h3>
+            <p>Interactive interfaces, game engines, SQL data management, and hyper-velocity prototype builds.</p>
+            <div class="synergy-leads">Lead: <strong>Emil</strong></div>
+          </div>
+
+          <div class="synergy-card">
+            <div class="synergy-icon">🏆</div>
+            <h3>Hackathon Execution</h3>
+            <p>End-to-end multi-disciplinary sprint builds tested under intense 24-36 hour hackathon pressure.</p>
+            <div class="synergy-leads">Unified Squad: <strong>4controllers</strong></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact / Uplink Section -->
+      <section id="contact-section" class="squad-contact-section">
+        <div class="contact-box glass-panel">
+          <div class="contact-info">
+            <span class="section-tag">// GET IN TOUCH</span>
+            <h2>Collaborate With Our Squad</h2>
+            <p>
+              Looking for a high-energy engineering team for your next hackathon, research project, internship opportunity, or prototype build? Dispatch a direct transmission to 4controllers.
+            </p>
+            <div class="direct-handles">
+              <a href="https://github.com/mskarthik260308-art" target="_blank" rel="noopener noreferrer" class="handle-item">
+                <span>GitHub:</span> @mskarthik260308-art
+              </a>
+              <a href="https://github.com/Emil7x" target="_blank" rel="noopener noreferrer" class="handle-item">
+                <span>GitHub:</span> @Emil7x
+              </a>
+              <a href="https://github.com/SnigdhaaP" target="_blank" rel="noopener noreferrer" class="handle-item">
+                <span>GitHub:</span> @SnigdhaaP
+              </a>
+              <a href="https://github.com/jeswinkmathew-creator5" target="_blank" rel="noopener noreferrer" class="handle-item">
+                <span>GitHub:</span> @jeswinkmathew-creator5
+              </a>
+            </div>
+          </div>
+
+          <form id="contactForm" class="contact-form" onsubmit="handleContactSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contactName">Your Name / Organization</label>
+                <input type="text" id="contactName" placeholder="e.g. Hackathon Organizer / Recruiter" required />
+              </div>
+              <div class="form-group">
+                <label for="contactEmail">Email Address</label>
+                <input type="email" id="contactEmail" placeholder="e.g. hello@domain.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="contactTarget">Select Team Member or Squad</label>
+              <select id="contactTarget">
+                <option value="all">Entire 4controllers Squad</option>
+                <option value="karthik">Karthik M S (ECE / Antigravity)</option>
+                <option value="emil">Emil (ECE / Game Dev & Rapid Coding)</option>
+                <option value="snigdhaa">Snigdhaa P (CSE / Data Science)</option>
+                <option value="jeswin">Jeswin (Electronics / Hardware & Software)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="contactMsg">Message / Collaboration Proposal</label>
+              <textarea id="contactMsg" rows="3" placeholder="Tell us about the project, hackathon, or role..." required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">
+              <span>Send Message</span>
+              <span class="btn-arrow">→</span>
+            </button>
+          </form>
+        </div>
+      </section>
+
+    </section>
+
+
+    <!-- ====================================================================
+         VIEW 2: INDIVIDUAL PORTFOLIO VIEW (CV STYLE)
+         ==================================================================== -->
+    <section id="portfolioView" class="view-section cv-view">
+
+      <!-- Sticky Quick-Switch Sub-Navigation -->
+      <nav class="cv-subnav">
+        <button class="back-btn" onclick="closePortfolio()" title="Return to Team Hub (ESC)">
+          <span class="back-arrow">←</span>
+          <span>Back to Team</span>
+          <span class="kbd-badge">ESC</span>
+        </button>
+
+        <div class="quick-switch-pills">
+          <span class="switch-label hide-mobile">Switch Member:</span>
+          <button id="tab-karthik" class="switch-pill" onclick="switchMember('karthik')">
+            <span class="pill-dot"></span> Karthik M S
+          </button>
+          <button id="tab-emil" class="switch-pill" onclick="switchMember('emil')">
+            <span class="pill-dot"></span> Emil
+          </button>
+          <button id="tab-snigdhaa" class="switch-pill" onclick="switchMember('snigdhaa')">
+            <span class="pill-dot"></span> Snigdhaa P
+          </button>
+          <button id="tab-jeswin" class="switch-pill" onclick="switchMember('jeswin')">
+            <span class="pill-dot"></span> Jeswin
+          </button>
+        </div>
+
+        <div class="cv-nav-actions">
+          <button class="action-btn-sm" onclick="copyPortfolioLink()" title="Copy shareable link">
+            <span>🔗</span> <span class="hide-mobile">Share</span>
+          </button>
+          <a id="cvGithubLink" href="#" target="_blank" rel="noopener noreferrer" class="action-btn-sm highlight">
+            <span>GitHub ↗</span>
+          </a>
+        </div>
+      </nav>
+
+      <!-- CV Layout Container -->
+      <div class="cv-container">
+
+        <!-- LEFT COLUMN: Dossier & Profile Info -->
+        <aside class="cv-sidebar glass-panel">
+          <div class="cv-avatar-container">
+            <div class="cv-avatar-glow"></div>
+            <img id="cvAvatarImg" src="" alt="Team Member Avatar" class="cv-avatar" />
+            <div class="cv-status-badge">
+              <span class="pulse-dot"></span> Available for Projects
+            </div>
+          </div>
+
+          <div class="cv-identity">
+            <h1 id="cvName" class="cv-name">Full Name</h1>
+            <div id="cvRole" class="cv-role">Role Tagline</div>
+            <p id="cvBio" class="cv-bio">Personal biography and engineering summary.</p>
+          </div>
+
+          <div class="cv-quick-info">
+            <div class="info-row">
+              <span class="info-label">Degree Focus</span>
+              <span id="cvDegree" class="info-val">Electronics &amp; Communication</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Specialization</span>
+              <span id="cvSpec" class="info-val">Embedded &amp; AI</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Squad Role</span>
+              <span id="cvSquadRole" class="info-val">Controller 01</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Location</span>
+              <span class="info-val">India</span>
+            </div>
+          </div>
+
+          <!-- Direct Links & GitHub -->
+          <div class="cv-contact-block">
+            <span class="sidebar-block-title">VERIFIED CONTACT</span>
+            <a id="cvGithubBtn" href="#" target="_blank" rel="noopener noreferrer" class="github-profile-card">
+              <svg class="gh-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+              <div class="gh-info">
+                <span class="gh-handle" id="cvGithubHandle">@username</span>
+                <span class="gh-sub">Visit GitHub Profile</span>
+              </div>
+              <span class="gh-arrow">↗</span>
+            </a>
+
+            <button class="cv-quick-contact-btn" onclick="scrollToContact()">
+              <span>✉</span> Send Message
+            </button>
+          </div>
+        </aside>
+
+        <!-- RIGHT COLUMN: Detailed CV Content -->
+        <main class="cv-main-content">
+
+          <!-- SECTION 1: Technical Arsenal & Skills Matrix -->
+          <section class="cv-content-section glass-panel">
+            <div class="section-title-bar">
+              <div class="section-heading-wrap">
+                <span class="section-icon">⚡</span>
+                <h3 class="section-title">Technical Skills &amp; Core Arsenal</h3>
+              </div>
+              <span class="section-pill">PROVEN COMPETENCIES</span>
+            </div>
+
+            <!-- Primary Highlighted Skills Tags -->
+            <div id="cvSkillsChips" class="skills-chips-wrapper"></div>
+
+            <!-- Detailed Skills Progress Bars -->
+            <div id="cvSkillBars" class="skill-bars-grid"></div>
+          </section>
+
+          <!-- SECTION 2: Featured Projects & Achievements -->
+          <section class="cv-content-section glass-panel">
+            <div class="section-title-bar">
+              <div class="section-heading-wrap">
+                <span class="section-icon">🚀</span>
+                <h3 class="section-title">Projects &amp; Major Achievements</h3>
+              </div>
+              <span class="section-pill">SHOWCASE &amp; BUILDS</span>
+            </div>
+
+            <div id="cvProjectsContainer" class="projects-cv-grid"></div>
+          </section>
+
+          <!-- SECTION 3: Hackathon History & Timeline -->
+          <section class="cv-content-section glass-panel">
+            <div class="section-title-bar">
+              <div class="section-heading-wrap">
+                <span class="section-icon">🏆</span>
+                <h3 class="section-title">Hackathons, Milestones &amp; Experience</h3>
+              </div>
+              <span class="section-pill">TIMELINE RECORD</span>
+            </div>
+
+            <div id="cvTimelineContainer" class="timeline-container"></div>
+          </section>
+
+          <!-- SECTION 4: Collaboration & Next Steps -->
+          <section class="cv-content-section collab-cta-card glass-panel">
+            <div class="collab-cta-inner">
+              <div class="cta-text-col">
+                <h3 class="cta-title">Interested in building something together?</h3>
+                <p class="cta-desc">
+                  Open for hackathons, engineering collaborations, open source contributions, and engineering internships.
+                </p>
+              </div>
+              <div class="cta-action-col">
+                <a id="cvDirectContactBtn" href="#contact-section" class="btn-primary" onclick="closePortfolio();">
+                  Contact Team Hub
+                </a>
+              </div>
+            </div>
+          </section>
+
+        </main>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Interactive Toast Notification Component -->
+  <div id="toastNotification" class="toast-notification" aria-live="polite">
+    <span class="toast-icon">✓</span>
+    <span id="toastMessage" class="toast-text">Notification message</span>
+  </div>
+
+  <!-- Modern Glass Footer -->
+  <footer class="main-footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <span class="footer-brand">4CONTROLLERS</span>
+        <span class="footer-divider">•</span>
+        <span class="footer-names">Karthik M S &bull; Emil &bull; Snigdhaa P &bull; Jeswin</span>
+      </div>
+      <div class="footer-right">
+        <span class="footer-kbd-hint">Shortcuts: [1-4] Switch Member | [ESC] Back to Team</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Application Logic -->
+  <script src="script.js"></script>
+</body>
+</html>
